@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'Manrope', sans-serif;
+  --color-background: #f7f8f5;
+  --color-foreground: #17211e;
+  --color-card: #ffffff;
+  --color-card-foreground: #17211e;
+  --color-border: #e4e9e0;
+  --color-input: #e1e7df;
+  --color-ring: #a3bc58;
+  --color-primary: #17211e;
+  --color-primary-foreground: #ffffff;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground font-sans antialiased; }
+  h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+  button, a, select, input, textarea { -webkit-tap-highlight-color: transparent; }
+  button { cursor: pointer; }
+  button:active { transform: scale(.98); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+/* Premium dark mode overrides */
+html.dark body { background: #101713; color: #eef4e9; }
+html.dark .bg-\[\#f7f8f5\] { background-color: #101713 !important; }
+html.dark .bg-white { background-color: #18221e !important; }
+html.dark .bg-\[\#fbfcfa\] { background-color: #141d19 !important; }
+html.dark .border-\[\#e4e9e0\], html.dark .border-\[\#e3e8e0\], html.dark .border-\[\#dfe6da\], html.dark .border-\[\#e1e7df\] { border-color: rgba(232, 242, 226, .12) !important; }
+html.dark .text-\[\#17211e\] { color: #eef4e9 !important; }
+html.dark .text-\[\#65736b\], html.dark .text-\[\#718078\], html.dark .text-\[\#87918b\] { color: #aab8ad !important; }
+html.dark input, html.dark textarea, html.dark select { color-scheme: dark; }
+@keyframes omni-pulse { 0%, 100% { transform: scale(.92); opacity: .55; } 50% { transform: scale(1); opacity: 1; } }
+@keyframes omni-shimmer { 0% { transform: translateX(-120%); } 100% { transform: translateX(260%); } }
+.omni-pulse { animation: omni-pulse 1.4s ease-in-out infinite; }
+.omni-shimmer { position: relative; overflow: hidden; }
+.omni-shimmer::after { content: ""; position: absolute; inset: 0; width: 38%; background: linear-gradient(90deg, transparent, rgba(214,243,123,.28), transparent); animation: omni-shimmer 1.6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .omni-pulse, .omni-shimmer::after { animation: none; } }

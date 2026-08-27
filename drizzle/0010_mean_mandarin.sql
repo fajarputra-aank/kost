@@ -1,0 +1,1 @@
+ALTER TABLE `platformPresets` ADD CONSTRAINT `platform_presets_user_platform_unique` UNIQUE(`userId`,`platform`);

@@ -1,0 +1,19 @@
+{
+  "queue": {
+    "maxConcurrentPerUser": 1,
+    "pollIntervalMs": 5000,
+    "maxAttempts": 3,
+    "leaseSeconds": 120
+  },
+  "videoProvider": {
+    "name": "gemini-veo",
+    "apiKeyEnv": "VIDEO_PROVIDER_API_KEY",
+    "supportedAspectRatios": ["9:16", "16:9"],
+    "supportedDurationsSeconds": [4, 6, 8]
+  },
+  "notifications": {
+    "inApp": true,
+    "email": false,
+    "webhookUrlEnv": "VIDEO_COMPLETION_WEBHOOK_URL"
+  }
+}

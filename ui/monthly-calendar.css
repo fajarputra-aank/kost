@@ -1,0 +1,21 @@
+.monthly-calendar { color: #17211e; background: #fff; border: 1px solid #dfe8df; border-radius: 24px; padding: 20px; font: 14px/1.4 system-ui, sans-serif; }
+.monthly-calendar__toolbar { display: grid; grid-template-columns: 1fr auto auto; gap: 16px; align-items: end; margin-bottom: 18px; }
+.eyebrow { margin: 0 0 4px; color: #839b42; font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.monthly-calendar h2 { margin: 0; font-size: 24px; letter-spacing: -.04em; }
+.monthly-calendar__actions, .monthly-calendar__filters { display: flex; align-items: center; gap: 8px; }
+.monthly-calendar__actions button { width: 34px; height: 34px; border: 1px solid #dfe8df; border-radius: 999px; background: transparent; cursor: pointer; font-size: 22px; }
+.monthly-calendar__filters label { display: grid; gap: 4px; color: #738078; font-size: 11px; }
+.monthly-calendar__filters select { min-width: 132px; border: 1px solid #dfe8df; border-radius: 10px; background: #fff; padding: 8px; color: inherit; }
+.monthly-calendar__grid { display: grid; grid-template-columns: repeat(7, minmax(110px, 1fr)); overflow: auto; border: 1px solid #dfe8df; border-radius: 18px; }
+.monthly-calendar__day-name { min-width: 110px; padding: 10px; background: #f1f6e9; color: #7e963f; font-size: 10px; font-weight: 800; text-transform: uppercase; }
+.monthly-calendar__cell { min-height: 112px; min-width: 110px; border-top: 1px solid #e5ebe5; border-right: 1px solid #e5ebe5; padding: 8px; transition: background .15s ease; }
+.monthly-calendar__cell:nth-child(7n) { border-right: 0; }
+.monthly-calendar__cell:hover { background: #f8fbf5; }
+.monthly-calendar__cell.is-outside { color: #aab4ad; background: #fbfcfa; }
+.monthly-calendar__cell time { display: block; margin-bottom: 6px; font-size: 11px; font-weight: 700; }
+.calendar-card { display: grid; width: 100%; gap: 3px; border: 0; border-left: 3px solid #9ab84f; border-radius: 8px; background: #f1f6e9; padding: 7px; text-align: left; color: #34421f; cursor: grab; font-size: 11px; }
+.calendar-card small { color: #7b887f; font-size: 9px; }
+.calendar-card.status-published { border-left-color: #4c9b80; }
+.calendar-card.status-failed { border-left-color: #bd684e; background: #fff2ed; }
+@media (max-width: 720px) { .monthly-calendar { padding: 14px; } .monthly-calendar__toolbar { grid-template-columns: 1fr; } .monthly-calendar__actions, .monthly-calendar__filters { justify-content: space-between; } .monthly-calendar__filters label { flex: 1; } .monthly-calendar__filters select { width: 100%; min-width: 0; } .monthly-calendar__grid { grid-template-columns: repeat(7, 128px); } }
+@media (prefers-color-scheme: dark) { .monthly-calendar { color: #e8f0e8; background: #18221e; border-color: rgba(255,255,255,.1); } .monthly-calendar__actions button, .monthly-calendar__filters select { border-color: rgba(255,255,255,.12); background: #1d2a23; color: inherit; } .monthly-calendar__day-name { background: #263421; } .monthly-calendar__grid, .monthly-calendar__cell { border-color: rgba(255,255,255,.1); } .monthly-calendar__cell.is-outside { background: #152019; } .monthly-calendar__cell:hover { background: #203027; } .calendar-card { background: #263421; color: #d6f37b; } .calendar-card small { color: #aab8ad; } .calendar-card.status-failed { background: #3a2520; } }

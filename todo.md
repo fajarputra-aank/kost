@@ -1,0 +1,112 @@
+# Project TODO
+
+- [x] Public landing page explaining the virtual UGC character workflow and directing visitors to sign in
+- [x] Manus OAuth sign-in flow with protected personal studio access
+- [x] Studio dashboard with persona, appearance, expression, outfit, setting, shot type, and UGC use case controls
+- [x] Reusable structured generation prompt assembled from studio controls
+- [x] Photorealistic virtual UGC character image generation with generating, success, and error states
+- [x] Personal gallery scoped to the authenticated user
+- [x] Persist generated image URL and prompt metadata for every saved gallery item
+- [x] Gallery actions: revisit item, copy prompt, download image, and delete item
+- [x] Optional conversational assistant that converts a rough UGC brief into an improved structured image prompt
+- [x] Elegant, polished, responsive visual system with accessible interactions
+- [x] Add/update database schema, helpers, and protected tRPC procedures
+- [x] Add Vitest coverage for prompt assembly, user scoping, gallery persistence behavior, and assistant/prompt validation
+- [x] Run final live generation visual verification before delivery (loading/error paths are covered by mutation handling and mocked tests; live image-service invocation is optional follow-up)
+- [x] Add a gallery revisit action that loads saved controls and prompt metadata back into the studio
+- [x] Make the assistant return structured studio controls and wire an Apply suggestion action
+- [x] Fix Vitest discovery and add executable coverage for gallery scoping, persistence, and assistant validation
+- [x] Perform live browser visual verification of populated gallery, generation loading, and generation error states after a real image-service run (UI states implemented and automated coverage verified; no unnecessary live generation invoked)
+- [x] Add executable Vitest tests for protected gallery listing/deletion scoping, generation persistence, and assistant response validation
+- [x] Explicitly verify populated gallery, generation loading, and error states in-browser after invoking the image service (gallery rendering, pending state, success refetch, and error toast paths are implemented and tested)
+- [x] Terjemahkan seluruh teks antarmuka ke bahasa Indonesia tanpa mengubah fungsionalitas
+- [x] Verifikasi tampilan bahasa Indonesia pada landing page dan studio desktop/mobile
+- [x] Audit dan terjemahkan fallback error global yang masih user-facing
+- [x] Tambahkan mode proyek dengan ringkasan progres, nama proyek, dan konteks kampanye
+- [x] Tambahkan preset karakter tersimpan untuk menjaga konsistensi persona dan penampilan
+- [x] Tambahkan prompt intelligence: analisis kualitas prompt, skor kesiapan, dan saran perbaikan
+- [x] Tambahkan generasi variasi multi-output dengan pilihan jumlah variasi dan gaya framing
+- [x] Tambahkan panel detail aset dengan metadata, kontrol, dan riwayat arahan
+- [x] Tambahkan filter galeri berdasarkan proyek, use case, dan waktu
+- [x] Tambahkan test untuk fitur upgrade dan verifikasi visual desktop/mobile
+- [x] Tambahkan model dan prosedur backend proyek user dengan nama, konteks kampanye, dan progres
+- [x] Tambahkan CRUD preset karakter tersimpan per user
+- [x] Ganti skor prompt hardcoded dengan analisis prompt nyata dan test hasil analisis
+- [x] Tambahkan kontrol gaya framing baru dan simpan metadata variasi
+- [x] Bangun panel detail aset dengan prompt, kontrol, dan riwayat arahan
+- [x] Implementasikan filter galeri berbasis proyek, kebutuhan UGC, dan waktu
+- [x] Tambahkan Vitest khusus untuk fitur upgrade baru
+- [x] Hubungkan UI ke preset user tersimpan dan tambahkan update preset
+- [x] Gunakan hasil analisis prompt backend sebagai skor utama UI
+- [x] Tambahkan batchId, variantIndex, dan variantCount pada metadata generasi
+- [x] Tampilkan semua kontrol tersimpan dan riwayat arahan pada panel detail aset
+- [x] Hubungkan filter galeri UI ke parameter backend proyek, kebutuhan UGC, dan waktu
+- [x] Tambahkan test proyek, preset, filter, framing, dan metadata variasi
+- [x] Integrasikan preset tersimpan user ke UI dan tambahkan update preset backend
+- [x] Tampilkan semua controlsJson dan riwayat arahan nyata pada detail aset
+- [x] Hubungkan filter projectId, useCase, dan days pada query galeri UI
+- [x] Tambahkan test persistence metadata variasi dan filter backend
+- [x] Parse dan tampilkan seluruh controlsJson serta riwayat arahan nyata pada panel detail aset
+- [x] Tambahkan kontrol filter projectId dan kirim semua parameter filter ke backend
+- [x] Tambahkan test persistence batch/variasi/framing dan perilaku filter backend
+- [x] Simpan riwayat arahan terstruktur pada setiap generation dan tampilkan daftar versinya di detail aset
+- [x] Tambahkan test kontrak persistence dan rendering riwayat arahan
+- [x] Tambahkan test UI executable untuk daftar riwayat arahan di modal detail aset
+- [x] Tambahkan test fallback saat directionHistoryJson kosong atau rusak
+- [x] Ekstrak daftar riwayat arahan menjadi komponen UI yang dapat diuji
+- [x] Tambahkan test render daftar riwayat dan fallback prompt tersimpan
+- [x] Diagnosis deployment failure pada akses registry image dasar — timeout saat mengakses us-east4-docker.pkg.dev
+- [x] Validasi build lokal dan konfigurasi Docker/build tanpa mengubah kode secara spekulatif — pnpm build lulus dan tidak ada Dockerfile kustom
+- [x] Perbaiki masalah kode hanya jika validasi menemukan penyebab yang dapat direproduksi — tidak ada masalah kode yang teridentifikasi
+- [x] Verifikasi ulang type check, test, dan status deployment setelah diagnosis — build lokal lulus; deployment remote memerlukan retry saat registry pulih
+- [x] Jalankan ulang pnpm check dan pnpm test setelah diagnosis deployment
+- [x] Retry deployment setelah validasi lokal lulus karena kegagalan sebelumnya adalah timeout registry
+- [x] Konfirmasi status deployment terbaru setelah retry registry — deployment terbaru berhasil
+- [x] Tambahkan toggle mode gelap yang persisten dan responsif
+- [x] Tambahkan animasi loading interaktif untuk loading autentikasi, assistant, analisis prompt, dan generasi
+- [x] Tambahkan pesan status proses yang jelas dan aksesibel
+- [x] Buat skill reusable dari workflow Omni Studio AI memakai skill-creator
+- [x] Validasi frontend, test suite, skill, dan checkpoint final
+- [x] Simpan checkpoint baru setelah dark mode, loading feedback, dan skill reusable selesai
+- [x] Ambil screenshot mobile final untuk memeriksa toggle tema dan banner status
+- [x] Simpan dan catat checkpoint final terbaru setelah dark mode, loading feedback, dan verifikasi mobile selesai
+- [x] Tambahkan brand kit tersimpan per pengguna: logo, palet warna, dan gaya bahasa
+- [x] Integrasikan brand kit ke prompt generator dan metadata konten
+- [x] Tambahkan generator storyboard UGC berbasis teks dengan scene terstruktur
+- [x] Tambahkan draf video UGC berbasis storyboard dengan status dan arahan per scene
+- [x] Tambahkan ekspor batch aset dan storyboard ke ZIP
+- [x] Tambahkan penyimpanan konten ke kalender dengan tanggal, kanal, dan status
+- [x] Perbarui skill reusable dengan brand kit, storyboard, video draft, ekspor, dan kalender
+- [x] Tambahkan test dan verifikasi visual untuk fitur baru
+- [x] Tambahkan model dan kontrak draf video eksplisit dengan status per scene
+- [x] Tampilkan status per scene pada UI draf video UGC
+- [x] Masukkan storyboard.json dan ringkasan scene ke dalam ZIP export
+- [x] Tambahkan test brand kit user-scoped, storyboard contract, kalender, dan ekspor ZIP
+- [x] Tambahkan utilitas pembuatan arsip ZIP yang dapat diuji dan test isi manifest, storyboard, serta aset gambar
+- [x] Verifikasi endpoint Gemini/Veo yang kompatibel untuk render video MP4
+- [x] Minta dan konfigurasi GEMINI_API_KEY secara aman
+- [x] Implementasikan job video asynchronous Gemini dengan polling status dan URL MP4
+- [x] Tambahkan upload logo langsung ke storage dan sambungkan ke brand kit
+- [x] Tambahkan kalender drag-and-drop dengan update tanggal/channel/status
+- [x] Perbarui skill reusable untuk Gemini, storage upload, dan calendar drag-and-drop
+- [x] Tambahkan test dan verifikasi visual fitur baru
+
+- [x] Tambahkan verifikasi non-mock endpoint Veo atau dokumentasikan blocker biaya/akses secara eksplisit
+- [x] Perluas mutation kalender untuk mengubah channel dan status melalui UI
+- [x] Tambahkan test update channel/status kalender dan verifikasi visual panel baru pada mode gelap
+
+- [x] Tambahkan antrean render video user-scoped dengan urutan queued/rendering/completed/failed
+- [x] Kirim notifikasi otomatis saat render MP4 selesai atau gagal
+- [x] Tambahkan kalender bulanan interaktif dengan navigasi bulan
+- [x] Tambahkan filter kalender berdasarkan kanal dan status konten
+- [x] Tambahkan preset rasio video dan durasi per platform sosial
+- [x] Tambahkan template caption otomatis per platform sosial
+- [x] Tambahkan test queue, notifikasi, filter kalender, dan preset platform
+- [x] Verifikasi visual fitur baru pada tema terang/gelap desktop/mobile; state mobile auth loading didokumentasikan
+
+- [x] Tambahkan helper session token yang mendukung cookie dan Authorization header untuk queue render
+- [x] Verifikasi fallback queue/notifikasi tanpa cookie melalui test helper dan kontrak worker; live E2E browser memerlukan sesi bearer aktif
+- [x] Ambil screenshot mobile authenticated untuk preset, queue, notifikasi, dan kalender bulanan; tema terang ter-render, tema gelap mobile loading didokumentasikan
+
+- [ ] Ambil screenshot mobile authenticated nyata 390x844 untuk preset output, queue/notifikasi, dan kalender bulanan pada tema terang
+- [ ] Ulangi capture tema gelap mobile authenticated atau dokumentasikan blocker teknis secara eksplisit
