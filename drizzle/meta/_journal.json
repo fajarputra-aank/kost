@@ -1,0 +1,83 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1787837094370,
+      "tag": "0000_adorable_meltdown",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1787837216858,
+      "tag": "0001_pink_killraven",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1787841597757,
+      "tag": "0002_oval_korg",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1787841968482,
+      "tag": "0003_giant_queen_noir",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1787842576125,
+      "tag": "0004_orange_namora",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1787844474845,
+      "tag": "0005_chief_avengers",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1787844547672,
+      "tag": "0006_dapper_talisman",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1787845074778,
+      "tag": "0007_volatile_white_queen",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1787850356332,
+      "tag": "0008_rich_mojo",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1787851514045,
+      "tag": "0009_abandoned_professor_monster",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "5",
+      "when": 1787852532094,
+      "tag": "0010_mean_mandarin",
+      "breakpoints": true
+    }
+  ]
+}
