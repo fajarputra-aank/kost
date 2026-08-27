@@ -1,0 +1,13 @@
+{
+  "name": "kost-video-queue",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.5"
+  },
+  "scripts": {
+    "worker": "node --experimental-sqlite video-queue/worker.mjs",
+    "worker:once": "node --experimental-sqlite video-queue/worker.mjs --once",
+    "worker:inspect": "node --experimental-sqlite video-queue/worker.mjs --inspect"
+  }
+}
