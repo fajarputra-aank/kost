@@ -14,7 +14,8 @@
     "worker": "node --experimental-sqlite video-queue/worker.mjs",
     "worker:once": "node --experimental-sqlite video-queue/worker.mjs --once",
     "worker:inspect": "node --experimental-sqlite video-queue/worker.mjs --inspect",
-    "test:video-sandbox": "node video-queue/sandbox-integration.mjs"
+    "test:video-sandbox": "node video-queue/sandbox-integration.mjs",
+    "deploy:staging": "node scripts/deploy-staging.mjs"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.693.0",
