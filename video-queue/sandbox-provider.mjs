@@ -22,6 +22,11 @@ const server = createServer(async (request, response) => {
   if (request.method === "GET" && match && operations.has(match[1])) {
     const operation = operations.get(match[1]);
     operation.polls += 1;
+    if (process.env.SANDBOX_FAIL_FIRST_POLL === "1" && operation.polls === 1) {
+      response.writeHead(503);
+      response.end(JSON.stringify({ error: "temporary_sandbox_failure" }));
+      return;
+    }
     response.writeHead(200);
     response.end(JSON.stringify({
       status: "completed",
