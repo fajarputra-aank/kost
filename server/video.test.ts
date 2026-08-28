@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
+vi.hoisted(() => { process.env.GEMINI_API_KEY = "ci-test-key"; return null; });
 const storageMock = vi.hoisted(() => ({ storagePut: vi.fn() }));
 vi.mock("./storage", () => storageMock);
 
