@@ -42,5 +42,8 @@ jobs:
       - name: Unit tests
         run: pnpm test -- --reporter=dot
 
+      - name: Video sandbox integration
+        run: pnpm test:video-sandbox
+
       - name: Production build
         run: pnpm build
