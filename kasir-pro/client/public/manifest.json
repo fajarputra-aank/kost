@@ -1,0 +1,16 @@
+{
+  "name": "KASIR PRO FNP",
+  "short_name": "KASIR PRO",
+  "description": "Professional Point of Sale & Business Management System",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F2E9",
+  "theme_color": "#15232B",
+  "lang": "id",
+  "icons": [{
+    "src": "/manus-storage/kasir-pro-logo_c5582c83.png",
+    "sizes": "192x192",
+    "type": "image/png",
+    "purpose": "any maskable"
+  }]
+}
