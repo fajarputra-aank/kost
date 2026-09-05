@@ -67,3 +67,15 @@ Prefer small adapters and pure evaluators over browser-specific logic scattered 
 - Desktop and mobile POS/promo/barcode screens are visually verified.
 - Checkpoint is saved.
 - Requested GitHub repository and commit are reported.
+
+## Receipt template and store logo
+
+When adding receipt customization, define a shared `ReceiptTemplate` contract and keep it inside the persisted store settings. Include at least `logoDataUrl`, `logoEnabled`, `alignment`, `paperWidth`, header/footer text, divider style, and visibility flags for address, phone, cashier, customer, payment, tax, and discount.
+
+Build one settings studio with a logo upload control, image-type and size validation, client-side resize/compression, remove/restore behavior, paper-width selection, visibility toggles, and a live receipt preview. Use the same template and transaction data for the preview, browser print, and thermal payload so the operator sees what will be printed. Normalize older local backups by merging missing template fields with defaults.
+
+For browser printing, escape user-entered store text before inserting it into the popup document and render the logo as an image with the configured alignment and paper width. For ESC/POS, detect connection capability first, convert the uploaded logo to a monochrome raster payload in the browser, send the configured alignment/dividers/visibility fields, and retain browser print as the fallback. Keep the logo compact because local-first data URLs increase snapshot size; for synchronized production deployments, prefer object storage metadata over embedding large images in the database snapshot.
+
+Add regression coverage for default-template migration and verify: logo upload/remove, preview updates, 58/80mm layout, hidden fields, custom header/footer, thermal fallback, and print-popup escaping.
+
+Update the delivery checklist with: receipt editor is responsive, logo is persisted and normalized across backup restore, browser and thermal output consume the same template, and the reusable skill is validated after edits.

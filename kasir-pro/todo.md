@@ -30,7 +30,7 @@
 ## Delivery
 
 - [x] Run type checks, production build, runtime checks, and responsive screenshots.
-- [ ] Save one completed checkpoint after all requested features are stable.
+- [x] Save one completed checkpoint after all requested features are stable.
 - [x] Clone the selected GitHub repository, copy the complete application, commit, and push.
 
 ## Gap resolution before final checkpoint
@@ -41,6 +41,22 @@
 - [x] Add WebUSB capability detection and configurable printer paper width.
 - [x] Reconcile promo usage from recorded transaction history, not only mutable counters.
 - [x] Evaluate all eligible promotions and choose the best eligible benefit without stacking conflicts.
-- [ ] Commit and push the copied KASIR PRO source to the selected GitHub repository.
+- [x] Commit and push the copied KASIR PRO source to the selected GitHub repository.
 - [x] Make checkout compare manual and automatic eligible promos and always apply the highest valid discount.
 - [x] Add a regression test covering weaker manual promo versus stronger eligible promo selection.
+
+## Receipt template and logo upgrade
+
+- [x] Add persistent receipt-template settings for alignment, visibility toggles, header/footer text, and paper width.
+- [x] Add local logo upload with image validation, resize/compression, preview, and restore/remove controls.
+- [x] Build a live receipt preview using the same data model as thermal and browser printing.
+- [x] Apply the customized template and logo to ESC/POS thermal output and browser print output.
+- [x] Update the reusable KASIR PRO skill with receipt customization and logo workflows.
+- [x] Validate the skill, run type checks/tests/build, and verify responsive settings and preview screens.
+- [x] Add an explicit reset-to-default-logo control in receipt settings.
+- [x] Make logo processing compression-aware, preserve a suitable image format, and enforce a bounded persisted result size.
+
+## Final delivery for receipt customization
+
+- [ ] Refresh the selected GitHub copy with the receipt-template and logo changes.
+- [ ] Save the final receipt customization checkpoint for delivery.
