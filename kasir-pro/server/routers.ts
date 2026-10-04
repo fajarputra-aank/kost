@@ -5,7 +5,7 @@ import { z } from "zod";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { getPosSnapshotForUser, savePosSnapshotForUser, SnapshotConflictError } from "./db";
-import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
+import { adminProcedure, protectedProcedure, publicProcedure, router } from "./_core/trpc";
 
 const productSchema = z.object({ id: z.string(), code: z.string(), name: z.string(), category: z.string(), unit: z.string(), cost: z.number(), price: z.number(), stock: z.number(), min: z.number(), supplier: z.string(), status: z.boolean(), accent: z.string() });
 const customerSchema = z.object({ id: z.string(), name: z.string(), phone: z.string(), segment: z.string(), purchases: z.number(), balance: z.number() });
@@ -51,7 +51,7 @@ export const appRouter = router({
   data: router({
     list: protectedProcedure.input(z.object({ entity: entitySchema })).query(async ({ ctx, input }) => { const snapshot = await getPosSnapshotForUser(ctx.user.id); if (!snapshot) return []; const decoded = decodeSnapshot(snapshot.payload); return decoded[input.entity]; }),
     upsert: protectedProcedure.input(upsertEntityInput).mutation(async ({ ctx, input }) => { try { const result = await saveEntity(ctx.user.id, input.entity, input.baseVersion, input.record as { id: string }); return { status: "synced" as const, entity: input.entity, ...result }; } catch (error) { if (error instanceof SnapshotConflictError) throw new TRPCError({ code: "CONFLICT", message: error.message, cause: { currentVersion: error.currentVersion, currentPayload: error.currentPayload } }); throw error; } }),
-    remove: protectedProcedure.input(removeEntityInput).mutation(async ({ ctx, input }) => { try { const result = await saveEntity(ctx.user.id, input.entity, input.baseVersion, { id: input.id }, true); return { status: "synced" as const, entity: input.entity, ...result }; } catch (error) { if (error instanceof SnapshotConflictError) throw new TRPCError({ code: "CONFLICT", message: error.message, cause: { currentVersion: error.currentVersion, currentPayload: error.currentPayload } }); throw error; } }),
+    remove: adminProcedure.input(removeEntityInput).mutation(async ({ ctx, input }) => { try { const result = await saveEntity(ctx.user.id, input.entity, input.baseVersion, { id: input.id }, true); return { status: "synced" as const, entity: input.entity, ...result }; } catch (error) { if (error instanceof SnapshotConflictError) throw new TRPCError({ code: "CONFLICT", message: error.message, cause: { currentVersion: error.currentVersion, currentPayload: error.currentPayload } }); throw error; } }),
   }),
 });
 

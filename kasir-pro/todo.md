@@ -58,5 +58,53 @@
 
 ## Final delivery for receipt customization
 
-- [ ] Refresh the selected GitHub copy with the receipt-template and logo changes.
-- [ ] Save the final receipt customization checkpoint for delivery.
+- [x] Refresh the selected GitHub copy with the receipt-template and logo changes.
+- [x] Save the final receipt customization checkpoint for delivery.
+
+## Data management and demo cleanup
+
+- [x] Add a central data-management menu for store identity, logo, products, categories, customers/members, suppliers, promos, transactions, expenses, and settings.
+- [x] Add edit, save, delete, bulk-delete, and clear-all controls with visible counts and confirmations.
+- [x] Add a safe delete-all-example-data flow that preserves app structure, store settings, and the active session.
+- [x] Ensure reset/restore normalizes receipt-template settings and does not silently recreate demo records.
+- [x] Verify persistence, destructive-action guards, responsive layout, type checks, tests, and build.
+- [x] Save and publish the final data-management checkpoint.
+- [x] Add explicit central entries for store identity, logo/template settings, and member levels.
+- [x] Add guarded reset controls for store settings and receipt-template/logo data while preserving app structure and session.
+- [x] Re-run verification after every listed management domain is represented in the center.
+
+## Admin-only access control
+
+- [x] Restrict Pengaturan navigation and direct route access to Admin sessions.
+- [x] Restrict all per-domain reset/delete actions and delete-all-example-data to Admin sessions.
+- [x] Keep Kasir checkout and permitted operational menus usable while showing clear access-denied feedback.
+- [x] Add regression coverage for Admin versus Kasir permissions and verify type checks, tests, build, and responsive UI.
+- [x] Save and publish the access-control checkpoint.
+
+## Access-control gap resolution
+
+- [x] Audit every destructive action across customer, member, product, promo, transaction, settings reset, demo wipe, and backend mutations; enforce Admin-only guards consistently.
+- [x] Add regression coverage for the audited destructive paths and confirm the current runtime logs are healthy.
+- [x] Capture fresh desktop and mobile verification for Admin-restricted and Kasir-allowed states.
+
+## Final access-control evidence
+
+- [x] Add explicit session guards to any customer/member destructive handlers if present, and document the backend mutation audit.
+- [x] Add route-level regression tests for Admin settings access, Kasir denial, and permitted Kasir POS access.
+- [x] Capture or exercise a Kasir session that reaches the access-denied state for Pengaturan while preserving normal Kasir checkout access.
+
+## Final access-control audit evidence
+
+- [x] Add a documented audit matrix covering product, customer, member, promo, transaction void, settings reset, demo wipe, and backend sync mutation paths.
+- [x] Refactor the app shell to use a shared route-access resolver and test the actual Admin/Kasir page decisions through that resolver.
+- [x] Re-run checks and screenshots after the evidence changes.
+- [x] Save the access-control checkpoint.
+- [x] Capture fresh desktop and mobile screenshots after the final route-resolver and audit-document changes.
+- [x] Capture a fresh mobile screenshot pass after the final route-resolver and audit-document changes, including Kasir-denied Pengaturan and Kasir-allowed Kasir views.
+- [x] Guard the backend entity-removal mutation with `adminProcedure` and add a non-Admin regression test.
+
+## User management
+
+- [x] Add persistent Admin/Kasir account records with active status and backward-compatible local-data normalization.
+- [x] Add Admin-only user directory with create, edit, activate, and deactivate actions.
+- [x] Connect local login to managed accounts and invalidate a Kasir session after deactivation.
