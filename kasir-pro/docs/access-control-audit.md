@@ -2,7 +2,15 @@
 
 ## Policy
 
-Only the `ADMIN` role may open Admin-only routes or execute destructive data operations. The shared policy lives in `shared/access.ts`; the app shell consumes `getPageAccess()` and destructive handlers consume `canDeleteData()`.
+Only the `ADMIN` role may open Admin-only routes or execute destructive data operations. The shared policy lives in `shared/access.ts`; the app shell consumes `getPageAccess()` and feature controls consume `canPerform()`.
+
+| Capability | Admin | Kasir |
+|---|---:|---:|
+| Checkout and barcode operations | Yes | Yes |
+| View product catalog | Yes | Yes |
+| Create/edit product master data | Yes | No (read-only) |
+| Manage members, promos, settings, users, finance, audit, backup | Yes | No |
+| Delete or reset data | Yes | No |
 
 ## Audited surfaces
 

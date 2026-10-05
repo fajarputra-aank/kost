@@ -1,5 +1,11 @@
 export type AccessRole = "ADMIN" | "KASIR";
 export type PageAccess = "allow" | "admin-only";
+export type AccessCapability = "checkout" | "view_catalog" | "manage_catalog" | "manage_members" | "manage_promos" | "manage_settings" | "manage_users" | "view_audit" | "manage_finance" | "backup_restore" | "delete_data";
+
+const ROLE_CAPABILITIES: Record<AccessRole, readonly AccessCapability[]> = {
+  ADMIN: ["checkout", "view_catalog", "manage_catalog", "manage_members", "manage_promos", "manage_settings", "manage_users", "view_audit", "manage_finance", "backup_restore", "delete_data"],
+  KASIR: ["checkout", "view_catalog"],
+};
 
 export const ADMIN_ONLY_PAGES = ["settings", "users", "backup", "audit", "payables", "purchases", "expenses", "promos"] as const;
 
@@ -12,5 +18,13 @@ export function canAccessAdminPage(role: AccessRole, page: string) {
 }
 
 export function canDeleteData(role: AccessRole) {
-  return role === "ADMIN";
+  return canPerform(role, "delete_data");
+}
+
+export function canPerform(role: AccessRole, capability: AccessCapability) {
+  return ROLE_CAPABILITIES[role].includes(capability);
+}
+
+export function getRoleLabel(role: AccessRole) {
+  return role === "ADMIN" ? "Administrator" : "Kasir";
 }
